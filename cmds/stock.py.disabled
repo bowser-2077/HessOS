@@ -1,0 +1,14 @@
+import requests
+
+def run(args):
+    if not args:
+        print("Usage: stock <btc/eth/...>")
+        return
+    coin = args[0].lower()
+    url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd"
+    try:
+        response = requests.get(url).json()
+        price = response[coin]["usd"]
+        print(f"Current {coin.upper()} price: ${price}")
+    except:
+        print("Failed to fetch price. Is the coin name correct?")

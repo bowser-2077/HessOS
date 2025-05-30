@@ -1,0 +1,2 @@
+def run(args):
+    print("2048 game is not implemented yet.")

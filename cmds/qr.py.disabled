@@ -1,0 +1,12 @@
+import qrcode
+
+def run(args):
+    if not args:
+        print("Usage: qr <url>")
+        return
+
+    url = args[0]
+    qr = qrcode.QRCode()
+    qr.add_data(url)
+    qr.make()
+    qr.print_ascii()

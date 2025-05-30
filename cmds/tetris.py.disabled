@@ -1,0 +1,2 @@
+def run(args):
+    print("Tetris game is not implemented yet.")
